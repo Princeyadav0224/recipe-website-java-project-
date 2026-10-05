@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recipe Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🍴 My Recipe Book</h1>
+        <p>Simple and delicious recipes</p>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search recipes..."
+        >
+    </header>
+
+    <main>
+        <div class="categories">
+            <button onclick="filterRecipes('all')">All</button>
+            <button onclick="filterRecipes('breakfast')">Breakfast</button>
+            <button onclick="filterRecipes('lunch')">Lunch</button>
+            <button onclick="filterRecipes('dinner')">Dinner</button>
+            <button onclick="filterRecipes('dessert')">Dessert</button>
+        </div>
+
+        <section id="recipeContainer" class="recipe-container">
+
+            <div class="recipe-card" data-category="breakfast">
+                <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500" alt="Pancakes">
+
+                <div class="recipe-info">
+                    <h2>Fluffy Pancakes</h2>
+                    <p>Easy and delicious pancakes for breakfast.</p>
+
+                    <button onclick="showRecipe('pancakes')">
+                        View Recipe
+                    </button>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="lunch">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Healthy salad">
+
+                <div class="recipe-info">
+                    <h2>Healthy Salad</h2>
+                    <p>A fresh and healthy salad for lunch.</p>
+
+                    <button onclick="showRecipe('salad')">
+                        View Recipe
+                    </button>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dessert">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="Chocolate cake">
+
+                <div class="recipe-info">
+                    <h2>Chocolate Cake</h2>
+                    <p>A rich and delicious chocolate dessert.</p>
+
+                    <button onclick="showRecipe('cake')">
+                        View Recipe
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeRecipe()" class="close">&times;</span>
+
+            <h2 id="modalTitle"></h2>
+
+            <h3>Ingredients</h3>
+            <ul id="ingredients"></ul>
+
+            <h3>Instructions</h3>
+            <p id="instructions"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
